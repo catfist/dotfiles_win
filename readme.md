@@ -1,4 +1,4 @@
 # dotfiles for windows
 
-## ‘O’ñ
+## å‰æ
 MSYS2+bash

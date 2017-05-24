@@ -1,0 +1,15 @@
+BoldAsFont=no
+Font=Ricty Diminished
+FontHeight=11
+BoldAsColour=yes
+Locale=C
+Charset=UTF-8
+FontSmoothing=partial
+AllowBlinking=yes
+Transparency=medium
+OpaqueWhenFocused=yes
+CursorType=block
+Rows=52
+PgUpDnScroll=yes
+Language=@
+Term=xterm-256color

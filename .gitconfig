@@ -1,0 +1,10 @@
+[core]
+	excludesfile = ~/.gitignore
+[user]
+	email = catfist.m@gmail.com
+	name = catfist
+[ghq]
+    # `‚¾‚ÆWindows‚Ì%USERPROFILE%‚ğQÆ‚µ‚Ä‚µ‚Ü‚¤
+    # $USER‚¾‚Æ•Ï”‚Ì“WŠJ©‘Ì‚ª‚Å‚«‚È‚¢
+	root = /msys64/home/MM/ghq
+

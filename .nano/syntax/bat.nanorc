@@ -1,0 +1,5 @@
+syntax "bat" "\.bat$" "\.cmd$"
+color yellow "%(\\.|[^\"])*%"
+color brightyellow "set[[:space:]]"
+color brightgreen "\="
+color green "REM.*$"

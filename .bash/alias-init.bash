@@ -30,7 +30,7 @@ alias fra="fr -a"
 # alias oedit="/c/apps/oedit/oedit.exe"
 
 # commands
-alias open="explorer"
+alias open="explorer" # [fix] 末尾`\`のフォルダパスを認識できない
 alias where="type -p" # whereコマンドだとWindows Pathを出してくるので
 
 # other

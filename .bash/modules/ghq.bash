@@ -69,6 +69,38 @@ ghq () { # ghqラッパー
         $orig import --help
       fi
       ;;
+    create )
+      IFS_BACKUP=$IFS # バックアップしておく。
+      IFS=$'\n'  # 区切り文字を変更
+      hosts=(bitbucket.org github.com)
+      if echo "${hosts[*]}" | grep -q "$2"; then
+        host="$(echo "${hosts[*]}" | grep "$2")"
+        shift 1
+      else
+        host="$(echo "${hosts[*]}" | cho)"
+      fi
+      IFS=$IFS_BACKUP # 元に戻す。
+      if [ -n "$2" ]; then
+        name="$2"
+      else
+        echo -n "Input name of repo: "
+        read name
+      fi
+      if [ -n "$host" -a -n "$name" ]; then
+        # [add] 正規表現でnameチェック
+        dest="$ghqroot/$host/catfist/$name"
+        mkdir -p $dest && cd $dest
+        pwd
+        git init
+        if [ $host = github.com ] && type hub > /dev/null; then
+          hub create catfist/$name
+          git remote set-url origin https://github.com/catfist/$name.git
+        fi
+        host=""
+        name=""
+        dest=""
+      fi
+      ;;
     h|help|-h|--help )
       $orig help
       echo ""
@@ -76,6 +108,7 @@ ghq () { # ghqラッパー
       echo "   ghq ()"
       echo "   ghq wrapper function"
       echo "     export   Output list to file"
+      echo "     create   Create new repository (args: <host> <name>)"
       ;;
     * )
       $orig $*

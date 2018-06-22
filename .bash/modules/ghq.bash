@@ -92,10 +92,6 @@ ghq () { # ghqラッパー
         mkdir -p $dest && cd $dest
         pwd
         git init
-        if [ $host = github.com ] && type hub > /dev/null; then
-          hub create catfist/$name
-          git remote set-url origin https://github.com/catfist/$name.git
-        fi
         host=""
         name=""
         dest=""

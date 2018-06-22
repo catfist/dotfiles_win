@@ -21,15 +21,10 @@
 # if [ -d "${HOME}/bin" ] ; then
 #   PATH="${HOME}/bin:${PATH}"
 # fi
-if [ -d "$HOME/.anyenv/bin" ]; then
-  PATH="$HOME/.anyenv/bin:$PATH"
-fi
 export GOPATH=$HOME/.go
 if [ -d "$GOPATH/bin" ]; then
   PATH="$GOPATH/bin:$PATH"
 fi
-echo "init anyenv in background."
-eval "$(anyenv init -)" &
 
 
 ###################

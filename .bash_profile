@@ -32,7 +32,7 @@ fi
 A_PATH=(/c/ProgramData/chocolatey/bin /usr/bin $HOME/bin /mingw64/bin)
 for V_PATH in ${A_PATH[@]}; do
   if ! echo "$PATH" | grep -Eq ":?$V_PATH:?"; then
-      echo "add $V_PATH to \$PATH"
+      echo "add $V_PATH to \$PATH" 1>&2
       export PATH="$V_PATH:$PATH"
   fi
 done
